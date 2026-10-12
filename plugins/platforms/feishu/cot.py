@@ -217,7 +217,7 @@ class FeishuCOTClient:
         input_preview: str = "",
         *,
         flush_interval: float = COT_FLUSH_INTERVAL_SECONDS,
-    ) -> "FeishuCOTRun | None":
+    ) -> FeishuCOTRun | None:
         if self._closing or self._closed:
             return None
         body = {"receive_id": chat_id}

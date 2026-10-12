@@ -938,7 +938,7 @@ class TurnRunner(GatewayTurnProgressMixin, GatewaySessionAgentMixin):
             return
         adapter = self._runner._delivery_adapter_for(ctx.source)
         try:
-            start_native_cot = getattr(adapter, "start_native_cot")
+            start_native_cot = adapter.start_native_cot
             ctx.native_cot = await start_native_cot(
                 ctx.source.chat_id,
                 ctx.inbound_message_id or ctx.event_message_id,
